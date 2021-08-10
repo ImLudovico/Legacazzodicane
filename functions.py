@@ -2,6 +2,7 @@ import openpyxl
 import string
 import random
 
+from openpyxl import Workbook
 from classes import *
 
 
@@ -131,3 +132,94 @@ def get_and_remove_elite_fw(teamlist, list):
     list.remove(pick)
 
     return teamlist, list
+
+
+
+
+def export_competition(competition):
+    wb = Workbook()
+
+    for i in range(len(competition.competition_team_list)):
+        y = 1
+
+        ws = wb.create_sheet(competition.competition_team_list[i].name)
+
+        d = ws.cell(row=y, column=1, value = competition.competition_team_list[i].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value = "Portieri")
+        y=y+1
+        d = ws.cell(row=y, column=1, value = competition.competition_team_list[i].team_goalkeepers[0].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_goalkeepers[1].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_goalkeepers[2].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_goalkeepers[3].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value = "Difensori")
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[0].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[1].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[2].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[3].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[4].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[5].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[6].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[7].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[8].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_defenders[9].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value = "Centrocampisti")
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[0].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[1].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[2].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[3].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[4].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[5].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[6].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[7].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[8].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_midfielders[9].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value = "Attaccanti")
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[0].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[1].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[2].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[3].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[4].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[5].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[6].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[7].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[8].name)
+        y=y+1
+        d = ws.cell(row=y, column=1, value =competition.competition_team_list[i].team_forwards[9].name)
+
+    wb.save("Legacazzodicane.xlsx")

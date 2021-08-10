@@ -351,3 +351,8 @@ for i in range(len(NewTeamList)):
     NewCompetition.competition_team_list[i].team_forwards[8].name, " ",
     NewCompetition.competition_team_list[i].team_forwards[9].name, " ")
     print("\n")
+
+
+
+input("Premere un tasto per esportare in excel e chiudere il programma")
+export_competition(NewCompetition)
